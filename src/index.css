@@ -1,0 +1,61 @@
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("assets/fonts/static/JetBrainsMono-Bold.ttf") format("truetype");
+}
+
+:root {
+  --white: hsl(0, 100%, 100%);
+  --black: hsl(0, 0%, 0%);
+
+  --grey-200: hsl(252, 11%, 91%);
+  --grey-600: hsl(251, 9%, 53%);
+  --grey-700: hsl(248, 5%, 34%);
+  --grey-800: hsl(248, 10%, 15%);
+  --grey-850: hsl(248, 15%, 11%);
+  --grey-900: hsl(248, 17%, 9%);
+  --grey-950: hsl(255, 22%, 4%);
+
+  --green-200: hsl(127, 100%, 82%);
+  --yellow-300: hsl(42, 91%, 68%);
+  --orange-400: hsl(13, 95%, 66%);
+  --red-500: hsl(0, 91%, 63%);
+
+  --spacing-100: 0.5rem;
+  --spacing-200: 1rem;
+  --spacing-300: 1.5rem;
+  --spacing-400: 2rem;
+  --spacing-700: 3.5rem;
+  --spacing-1000: 5rem;
+  --spacing-1300: 6.5rem;
+  --spacing-1600: 8rem;
+  --spacing-2000: 10rem;
+  --spacing-2200: 11rem;
+  --spacing-2300: 11.5rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  color: var(--white);
+  font-family: "JetBrains Mono";
+  font-size: 16px;
+}
+
+body {
+  background: var(
+    --colors-gradient-1,
+    linear-gradient(90deg, #14131b 0%, #08070b 100%)
+  );
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2rem;
+}
