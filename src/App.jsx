@@ -2,12 +2,23 @@ import { useState } from "react";
 import Checkbox from "./Checkbox.jsx";
 import Button from "./Button.jsx";
 import "./App.css";
-import CopyIcon from "./assets/images/icon-copy.svg";
+import CopyIcon from "./assets/images/icon-copy.svg?react";
 import ArrowRightIcon from "./assets/images/icon-arrow-right.svg";
 
 function App() {
   const [password, setPassword] = useState("P4$5W0rD!");
   const [length, setLength] = useState(0);
+  const [click, setClick] = useState(false);
+
+  const handleCopyPassword = () => {
+    navigator.clipboard.writeText(password);
+
+    setClick(true);
+
+    setTimeout(() => {
+      setClick(false);
+    }, 2000);
+  };
 
   const handleSliderChange = (e) => {
     setLength(e.target.value);
@@ -21,9 +32,12 @@ function App() {
       <div className="settings-container">
         <div className="password-container">
           <p>{password}</p>
-          <button>
-            <img src={CopyIcon} alt="Copy Icon" />
-          </button>
+          <div className="copy-container">
+            {click && <p>COPIED</p>}
+            <button onClick={handleCopyPassword}>
+              <CopyIcon className="copy-icon" />
+            </button>
+          </div>
         </div>
 
         <form className="options-container">
